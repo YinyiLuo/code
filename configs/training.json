@@ -1,0 +1,53 @@
+{
+  "collect_multi_exit_training": true,
+  "understanding_depth": 28,
+  "generation_min_depth": 22,
+  "generation_max_depth": 28,
+  "generation_schedule": "late_detail",
+  "replay_deeper_kv": true,
+  "router_enabled": true,
+  "router_candidates_understanding": [20, 24, 28],
+  "router_candidates_generation": [22, 24, 26, 28],
+  "router_tasks": [
+    "understanding",
+    "generation",
+    "mixed",
+    "vqa"
+  ],
+  "router_tasks_generation": [
+    "generation",
+    "mixed"
+  ],
+  "router_hidden_size": 256,
+  "router_initial_bias": -2.0,
+  "router_temperature": 1.0,
+  "router_threshold": 0.5,
+  "router_min_exit_depth": 20,
+  "router_expected_loss_weight": 1.0,
+  "router_compute_weight": 0.02,
+  "router_supervised_weight": 1.0,
+  "router_quality_margin": 0.15,
+  "router_detach_features": true,
+  "tafe_enabled": true,
+  "tafe_task_names_understanding": [
+    "understanding",
+    "mixed",
+    "vqa"
+  ],
+  "tafe_task_names_generation": [
+    "generation",
+    "mixed"
+  ],
+  "tafe_controller_hidden_size": 256,
+  "tafe_num_specialized_subsets": 2,
+  "tafe_routing_width": 1,
+  "tafe_adapter_rank": 16,
+  "tafe_adapter_scale": 1.0,
+  "tafe_condition_on_task": true,
+  "tafe_allow_exit": true,
+  "tafe_action_costs": [1.0, 0.75, 0.0],
+  "tafe_initial_action_bias": [0.0, -0.1, -1.0],
+  "tafe_soft_routing_train": true,
+  "tafe_soft_routing_temperature": 1.0,
+  "tafe_entropy_weight": 0.001
+}
